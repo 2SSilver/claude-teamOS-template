@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -sf http://localhost:37777/health)",
+      "Bash(curl *)",
+      "Bash(gh auth status)"
+    ]
+  }
+}
