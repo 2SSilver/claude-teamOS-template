@@ -68,15 +68,25 @@ mkdir -p /Users/stefan.silver/projects/PAI/.claude/skills/skill-name
 mkdir -p ~/.claude/skills/skill-name
 ```
 
-For multi-file Skills:
+**Choose a pattern:**
+
+**Single-file** — right for focused, single-mode capabilities (<150 lines):
 ```
 skill-name/
-├── SKILL.md        (required)
-├── reference.md    (optional — detailed docs, advanced options)
-├── examples.md     (optional — extended examples)
-├── scripts/        (optional — helper scripts)
-└── templates/      (optional — file templates)
+└── SKILL.md        (required — everything inline)
 ```
+
+**Multi-file workflow** — right when the skill has 3+ distinct modes, or any mode needs >30 lines to be high quality:
+```
+skill-name/
+├── SKILL.md              (lean root — principles, checklist, routing)
+├── guided-sprint.md      (loaded on demand when sprint mode triggered)
+├── work-backwards.md     (loaded on demand when that mode triggered)
+├── review-template.md    (loaded on demand for review output)
+└── anti-patterns.md      (loaded on demand as reference)
+```
+
+Use the **on-demand reading pattern** — not `@`-imports. `@`-imports pre-load everything at parse time (same as one big file). On-demand means SKILL.md explicitly instructs Claude to *read* a sub-file only when that mode is entered. See Step 8.
 
 ### Step 5: Write SKILL.md frontmatter
 
@@ -159,19 +169,30 @@ Concrete usage examples.
 - Common pitfalls to avoid
 ```
 
-### Step 8: Add supporting files (optional)
+### Step 8: Add supporting files (multi-file workflow pattern)
 
-Create additional files for progressive disclosure:
+For **single-file skills**, skip this step.
 
-- **reference.md**: Detailed options, advanced configuration
-- **examples.md**: Extended examples and edge cases
-- **scripts/**: Helper scripts
-- **templates/**: File templates or boilerplate
+For **multi-file workflow skills**, use the on-demand reading pattern — not `@`-imports:
 
-Reference them from SKILL.md:
+**Why not `@`-imports:** `@file.md` pre-loads content at parse time, identical to having it all in SKILL.md. No context efficiency gain.
+
+**On-demand pattern:** SKILL.md contains explicit routing instructions. Claude reads the sub-file only when that mode is triggered.
+
+**Routing instruction template** (add to "When the User Asks" section in SKILL.md):
 ```markdown
-For advanced usage, see [reference.md](reference.md).
+- "Guide me through [workflow]" → read `workflow-file.md` in this skill directory and follow it
+- "Review [thing]" → read `review-template.md` in this skill directory for output format
+- Pattern spotted → read `anti-patterns.md` in this skill directory for diagnostic guidance
 ```
+
+**Common sub-file types:**
+- `guided-sprint.md` — step-by-step workflow with sub-questions and branching logic
+- `work-backwards.md` — reverse-engineering method with worked examples
+- `review-template.md` — output format with annotated sections and a filled example
+- `anti-patterns.md` — pattern library with diagnostic questions and redirects
+- `reference.md` — detailed options, advanced configuration
+- `examples.md` — extended examples and edge cases
 
 ### Step 9: Validate the Skill
 
