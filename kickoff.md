@@ -32,9 +32,9 @@ Open `.mcp.json` at the repo root. Replace any `YOUR_API_KEY` placeholders with 
 
 Common servers to consider:
 - **Perplexity** — web-grounded search and research (`PERPLEXITY_API_KEY`)
-- **Firecrawl** — scrape web pages and documents (`FIRECRAWL_API_KEY`)
 - **GitHub** — interact with repos and issues
-- **Linear / Jira** — task and issue tracking
+- **Slack** — read channels, post messages, search conversations
+- **Google Drive / Notion** — access shared documents and knowledge bases
 
 ---
 
@@ -62,7 +62,7 @@ The commands in `.claude/commands/` are ready to use out of the box. Review them
 
 Skills are reusable Claude behaviours packaged with instructions, scripts, and references.
 
-- [ ] Check if any PAI-wide skills apply (e.g. `pptx` for presentation work)
+- [ ] Check if any globally installed skills apply (e.g. `pptx` for presentation work)
 - [ ] If the team needs a domain-specific skill (e.g. a persona, a recurring analysis type), create one in `.claude/skills/`
 - [ ] Skills placed in `.claude/skills/` at the TeamOS root are available to all projects
 
@@ -142,3 +142,5 @@ The TeamOS is configured. From here:
 - **Update this file** if the kickoff process needs improving for the next team
 
 Delete or archive this checklist once complete, or keep it as a reference for onboarding new team members.
+
+- [ ] Ask Claude to remove the `> **First time here?** Read \`kickoff.md\` before anything else.` line from `CLAUDE.md` — it is no longer needed once setup is complete.

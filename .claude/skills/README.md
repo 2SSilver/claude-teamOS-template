@@ -22,7 +22,7 @@ Skills are reusable Claude behaviours packaged with instructions, scripts, and r
 
 - Lowercase, hyphens only, max 64 characters
 - Name should describe what the skill does, not what it is
-- Examples: `interview-prep`, `cybersecurity-director`, `sec-digest`
+- Examples: `interview-prep`, `okr-advisor`, `mcp-integration`
 
 ## Planning a new skill
 

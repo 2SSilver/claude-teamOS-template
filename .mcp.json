@@ -8,12 +8,12 @@
         "PERPLEXITY_API_KEY": "YOUR_PERPLEXITY_API_KEY"
       }
     },
-    "firecrawl": {
+    "your-mcp-server": {
       "type": "stdio",
-      "command": "npx",
-      "args": ["-y", "firecrawl-mcp"],
+      "command": "YOUR_COMMAND",
+      "args": [],
       "env": {
-        "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_API_KEY"
+        "YOUR_API_KEY": "YOUR_API_KEY_VALUE"
       }
     }
   }
