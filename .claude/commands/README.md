@@ -32,12 +32,4 @@ Commands are slash-invokable instructions that Claude executes on demand. They a
 
 ## Current commands
 
-| Command | Purpose |
-|---------|---------|
-| `/prime` | Initialize a session — load context, summarize mission and priorities, confirm readiness |
-| `/create-plan` | Create a detailed implementation plan before doing work |
-| `/implement` | Execute an approved plan step by step |
-| `/brain-wiki` | Consult the wiki before starting a new approach or design decision |
-| `/brain-extract` | Extract reusable insights from current session work into a raw note |
-| `/brain-summarize` | Summarize reusable lessons from a session or project phase |
-| `/brain-promote` | Promote a raw note into a structured wiki page |
+See the `## Commands` section in `CLAUDE.md` for the current list — update it there when adding a new command.
