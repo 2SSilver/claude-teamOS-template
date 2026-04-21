@@ -51,4 +51,4 @@ TeamOS is a Claude Code workspace that gives your team:
 
 ## Maintained by
 
-This template is maintained at [github.com/stefansilver/claude-teamOS-template](https://github.com/stefansilver/claude-teamOS-template). Update the template repo when a TeamOS pattern improves — other teams benefit.
+This template is maintained at [github.com/2SSilver/claude-teamOS-template](https://github.com/2SSilver/claude-teamOS-template). Update the template repo when a TeamOS pattern improves — other teams benefit.

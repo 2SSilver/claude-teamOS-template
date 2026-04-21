@@ -13,7 +13,7 @@ A single body of tightly related work does not need sub-projects — the TeamOS 
 
 ## How to add a project
 
-1. Copy `example-project/` and rename it: `cp -r example-project/ my-project-name/`
+1. Copy the starter template and rename it: `cp -r ../template/example-project/ my-project-name/`
 2. Fill in `my-project-name/CLAUDE.md` with project-specific guidance
 3. Fill in `my-project-name/context/` files
 4. Add the project to the list below

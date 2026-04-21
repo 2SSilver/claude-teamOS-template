@@ -74,7 +74,7 @@ Skills are reusable Claude behaviours packaged with instructions, scripts, and r
 
 If the team is working on a specific project or engagement, set it up now.
 
-- [ ] Duplicate `projects/example-project/` and rename it to your project name
+- [ ] Duplicate the starter template: `cp -r template/example-project/ projects/my-project-name/`
 - [ ] Fill in `projects/<your-project>/CLAUDE.md` with project-specific guidance
 - [ ] Fill in `projects/<your-project>/context/` files
 - [ ] Read `projects/README.md` for the full pattern and conventions
@@ -93,7 +93,16 @@ Shell aliases make it fast to launch a TeamOS session.
 
 ---
 
-## Step 8 — Configure Auto-Memory (optional)
+## Step 8 — Add Personal Overrides (optional)
+
+If you have personal preferences that should not be committed to the repo (e.g. your own tone preferences, personal shortcuts, local-only instructions), create a `CLAUDE.local.md` at the repo root. Claude Code loads it automatically alongside `CLAUDE.md`, and it is gitignored by default.
+
+- [ ] Create `CLAUDE.local.md` at the repo root (optional — only if needed)
+- [ ] Add any personal, non-team instructions there
+
+---
+
+## Step 9 — Configure Auto-Memory (optional)
 
 Claude's auto-memory system stores session context between conversations.
 
@@ -104,7 +113,7 @@ Claude's auto-memory system stores session context between conversations.
 
 ---
 
-## Step 9 — Run `/prime` for the First Time
+## Step 10 — Run `/prime` for the First Time
 
 - [ ] Open Claude Code in this directory
 - [ ] Run `/prime`
@@ -113,7 +122,7 @@ Claude's auto-memory system stores session context between conversations.
 
 ---
 
-## Step 10 — Log the First Decision
+## Step 11 — Log the First Decision
 
 Every significant choice gets logged in `context/decisions.md`. Log one now to confirm the system is working.
 

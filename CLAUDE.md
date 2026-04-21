@@ -6,50 +6,25 @@ This file provides guidance to Claude Code when working in this repository.
 
 ---
 
-## Writing Convention
+## Core Principles
 
-Always use the team name (or "the team") and "Claude" in documentation. Avoid pronouns like "I", "you", "me", "my" in CLAUDE.md files — it avoids ambiguity about who is speaking.
+- Use the team name (or "the team") and "Claude" in all docs — no I/you/me/your pronouns
+- IMPORTANT: Always plan before implementing — use `/create-plan` for non-trivial work; ask one clarifying question at a time; get approval before starting
+- Feedback is direct and specific — no hedging; bullet points for summaries; "cut argument A" not "make it shorter"
+- Run `/prime` at the start of every session
+- IMPORTANT: After any workspace change (new commands, structure, scripts, workflows), update CLAUDE.md to reflect it
 
 ---
 
-## How the Team and Claude Work Together
+## Team Structure
 
-### Planning Protocol
+Claude uses this table to know who to loop in or delegate tasks to.
 
-**Always plan before implementation:**
-- Discuss strategy before writing code or making changes
-- Ask clarifying questions one at a time so the team can give complete answers
-- Get approval on the approach before starting
-- Focus on understanding requirements and flow first
-
-**Multi-level planning:**
-- Plan at the high level (overall goals and flow)
-- Then plan at the task level (specific file or feature details)
-- Implement only after both levels are agreed
-
-**Check understanding:**
-- After completing each task, confirm what was done and ask if there are questions
-- It is important that the team understands all changes made together
-
-### Feedback Format
-
-**Direct and specific:**
-- Give clear, direct feedback and critiques
-- No hedging or vague suggestions
-- Specific examples over vague advice: "Cut argument A" not "make it shorter"
-- Be opinionated and flag divergence from best practice
-
-**Format preferences:**
-- Bullet points for feedback and summaries
-
-### Start Flow
-
-At the start of each session, run `/prime`. Claude will:
-1. Read CLAUDE.md (already loaded automatically)
-2. Read all context files
-3. Check for recent plans and outputs
-4. Summarize the team's mission, priorities, and recent work
-5. Ask what to work on
+| Name | Role | Contact (Slack / Teams) |
+|------|------|------------------------|
+| <!-- TODO: Name --> | <!-- TODO: Role --> | <!-- TODO: @handle --> |
+| <!-- TODO: Name --> | <!-- TODO: Role --> | <!-- TODO: @handle --> |
+| <!-- TODO: Name --> | <!-- TODO: Role --> | <!-- TODO: @handle --> |
 
 ---
 
@@ -62,6 +37,7 @@ At the start of each session, run `/prime`. Claude will:
 ├── .mcp.json              # MCP server configuration
 ├── .claude/
 │   ├── commands/          # Slash commands (available to all projects)
+│   ├── rules/             # Always-on modular rules (loaded automatically)
 │   └── skills/            # Team-wide and project-specific skills
 ├── brain/                 # Durable knowledge layer
 │   ├── BRAIN.md           # Brain system documentation
@@ -74,9 +50,9 @@ At the start of each session, run `/prime`. Claude will:
 │   ├── strategy.md        # Goals, priorities, success metrics
 │   ├── current-data.md    # Current status, live metrics, key numbers
 │   └── decisions.md       # Decision log (newest-first)
-├── projects/              # Sub-projects within this TeamOS
-│   ├── README.md          # How to add and structure a project
-│   └── example-project/   # Minimal example showing the pattern
+├── projects/              # Sub-projects (copy from template/example-project/ to add one)
+├── template/
+│   └── example-project/   # Starter template for new sub-projects
 ├── plans/                 # Implementation plans (root-level, cross-project)
 ├── outputs/               # Team-level deliverables
 ├── reference/             # Shared templates, examples, reference material
@@ -87,11 +63,11 @@ At the start of each session, run `/prime`. Claude will:
 
 ## Commands
 
-Available commands are in `.claude/commands/` and work from any project within this TeamOS.
+Available in `.claude/commands/` and work from any project within this TeamOS.
 
 | Command | Purpose |
 |---------|---------|
-| `/prime` | Initialize a session by loading context, summarizing mission and priorities, confirming readiness |
+| `/prime` | Initialize a session — load context, summarize mission and priorities, confirm readiness |
 | `/create-plan [request]` | Create a detailed implementation plan before doing work |
 | `/implement [plan-path]` | Execute an approved plan step by step |
 | `/brain-wiki [topic]` | Consult the wiki before starting a new approach or design decision |
@@ -101,66 +77,22 @@ Available commands are in `.claude/commands/` and work from any project within t
 
 ---
 
-## Brain Behavior
+## Brain
 
-The `brain/` directory is the team's durable knowledge layer — shared across all projects.
+The `brain/` directory is the team's durable knowledge layer, shared across all projects. Before designing a new approach for a non-trivial problem, check `brain/wiki/` for relevant patterns — use `/brain-wiki <topic>` explicitly. After significant work, Claude will offer to run `/brain-extract` or `/brain-summarize` to capture what was learned.
 
-**Before designing a new approach** for a non-trivial problem, check `brain/wiki/` for relevant patterns. Use `/brain-wiki <topic>` to do this explicitly. If a matching page exists, apply it as the starting point.
-
-**After significant work** — end of a project phase, a substantial deliverable, or a session with clear lessons — Claude will offer to run `/brain-extract` or `/brain-summarize` to capture what was learned.
-
-```
-session work → brain/raw/ → (promote when pattern is clear) → brain/wiki/
-```
-
-**Promotion criteria** — promote a raw note to wiki when:
-- The same pattern has appeared in two or more projects
-- The insight would change how to approach a new problem
-- The lesson took significant effort to learn and would be expensive to relearn
+See `brain/BRAIN.md` for promotion criteria and the full system documentation.
 
 ---
 
 ## Decision Logging
 
-Every project (and the TeamOS root) maintains a `context/decisions.md` file. Claude appends entries inline as decisions are made — no manual action required. `/prime` reads this file at session start.
-
-**Write a decision entry when:**
-- An approach or strategy is chosen over alternatives
-- A structural, architectural, or scoping choice is made
-- A process or workflow decision is agreed
-- An explicit "we'll go with X" moment occurs with meaningful reasoning
-
-**Do not capture:** minor implementation details, reversible one-line choices, things already fully described in a plan.
-
-**Format** — append newest-first under `## Decisions` in `context/decisions.md`:
-
-```
-**YYYY-MM-DD — [Short decision title]**
-- **Decision:** One sentence stating what was decided.
-- **Reason:** One or two sentences on why.
-```
-
-TeamOS-level decisions go into the root `context/decisions.md`. Project-level decisions go into the project's own `context/decisions.md`.
+@.claude/rules/decisions.md
 
 ---
 
 ## Memory
 
-This TeamOS uses a single memory layer:
+Claude's auto-memory system (`~/.claude/projects/.../memory/`) stores session context between conversations automatically — no setup required.
 
-**Auto-memory** — session continuity across conversations. Stored at `~/.claude/projects/.../memory/`. Claude reads and writes this automatically to maintain context between sessions.
-
-> **Optional (personal use only):** [claude-mem](https://github.com/thedotmack/claude-mem) adds a semantic observation layer (SQLite + Chroma, searchable via MCP). It is AGPL-3.0 licensed and routes observations through the Claude API — review carefully before enabling in a team or enterprise context.
-
----
-
-## Workspace Maintenance Rule
-
-**Whenever Claude makes changes to this workspace, Claude must consider whether CLAUDE.md needs updating.**
-
-After any change — adding commands, scripts, workflows, new structure — ask:
-1. Does this add functionality the team needs to know about?
-2. Does it modify the structure documented above?
-3. Should a new command or skill be listed?
-
-If yes to any, update the relevant sections. This file must always reflect the current state of the workspace.
+> **Optional (personal use only):** [claude-mem](https://github.com/thedotmack/claude-mem) adds a semantic observation layer (SQLite + Chroma, searchable via MCP). AGPL-3.0 licensed — review carefully before enabling in a team or enterprise context.

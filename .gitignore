@@ -23,6 +23,9 @@ build/
 *.pem
 *.key
 
+# Personal Claude overrides (gitignored — use for user-specific preferences)
+CLAUDE.local.md
+
 # Logs
 *.log
 npm-debug.log*
