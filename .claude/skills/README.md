@@ -30,4 +30,7 @@ Use `/create-plan` to plan the skill before creating it. Skills with scripts or 
 
 ## Current skills
 
-<!-- Add entries here as skills are added to the team. -->
+| Skill | Trigger |
+|-------|---------|
+| `mcp-integration` | When adding or configuring an MCP server, integrating external tools via `.mcp.json` |
+| `skill-writer` | When creating a new skill — guides through SKILL.md structure and frontmatter |
