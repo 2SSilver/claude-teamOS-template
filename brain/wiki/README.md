@@ -25,4 +25,22 @@ Keep pages short. A wiki page is a decision aid, not documentation. If a page ex
 
 ## Current pages
 
-<!-- Claude will add entries here as pages are promoted from raw/. -->
+- [name-by-function-not-structure.md](name-by-function-not-structure.md) — Name aliases and shortcuts by what they do, not where they live
+- [gitignore-secrets-after-config.md](gitignore-secrets-after-config.md) — Check gitignore immediately after creating any config file with credentials
+- [content-first-presentation-workflow.md](content-first-presentation-workflow.md) — Write slide content as .md before rendering — separate content from layout
+- [pptx-qa-pipeline.md](pptx-qa-pipeline.md) — Convert pptx → PDF → 96 DPI JPGs for visual inspection via LibreOffice + pdftoppm
+- [parallel-mcp-batch.md](parallel-mcp-batch.md) — Run independent MCP tool calls in a single message for concurrent execution
+- [google-drive-bulk-sort.md](google-drive-bulk-sort.md) — Bulk sort a Drive folder: list once, categorise, batch move in parallel
+- [context-todo-persistence.md](context-todo-persistence.md) — Use context/todo.md to persist tasks across sessions; read by /prime automatically
+- [smoke-test-acceptance-gate.md](smoke-test-acceptance-gate.md) — Browser smoke test is the real acceptance gate; unit tests passing is not enough
+- [fastapi-pytest-tdd.md](fastapi-pytest-tdd.md) — FastAPI + pytest TDD cycle: helper functions over fixtures, full module reload chain
+- [design-handoff-keep-css.md](design-handoff-keep-css.md) — When a design handoff delivers a complete CSS system, keep it; don't convert to Tailwind
+- [ruff-modern-python.md](ruff-modern-python.md) — Ruff enforces X|None over Optional[X] and collections.abc over typing — write it right from the start
+- [plugin-owned-files.md](plugin-owned-files.md) — Plugin-owned files are overwritten on update; commit them or move customisations out of the plugin's reach
+- [vite-remote-access.md](vite-remote-access.md) — Vite 5.3+ silently blocks browser requests on remote hosts; fix with allowedHosts: 'all' + host: '0.0.0.0'
+- [mobile-viewport-dvh.md](mobile-viewport-dvh.md) — Use `100dvh` not `100vh` on mobile; `100vh` on Chrome Android includes hidden browser chrome and cuts off bottom elements
+- [android-ghost-click-touch-action.md](android-ghost-click-touch-action.md) — Android 300ms tap delay causes ghost clicks after DOM shifts; fix with `touch-action: manipulation`
+- [css-grid-minmax-zero.md](css-grid-minmax-zero.md) — `1fr` = `minmax(auto, 1fr)` and can overflow; use `minmax(0, 1fr)` for columns that must not exceed available space
+- [real-device-debug-overlay.md](real-device-debug-overlay.md) — Temporary fixed-position overlay prints runtime values on-screen when DevTools isn't available on a real device
+- [sidecar-json-external-formats.md](sidecar-json-external-formats.md) — Co-locate a sidecar JSON file to store state alongside files whose format you don't own
+- [css-grid-responsive-columns.md](css-grid-responsive-columns.md) — Hide grid columns responsively: change grid-template-columns AND display:none the cells together
