@@ -26,7 +26,7 @@ Before writing anything, ask clarifying questions one at a time and wait for a c
 1. What specific capability should this Skill provide?
 2. When should Claude use this Skill? What would Stefan say to trigger it?
 3. What tools or resources does it need?
-4. Is this for personal use (`~/.claude/skills/`) or PAI-wide (`.claude/skills/` in the PAI project)?
+4. Is this for personal use (`~/.claude/skills/`) or team-wide (`.claude/skills/` in the teamme project)?
 
 Keep it focused: **one Skill = one capability**
 - Good: "PDF form filling", "security digest generation"
@@ -49,10 +49,10 @@ After gathering requirements, present a short plan to Stefan covering:
 - Experimental or work-in-progress Skills
 - Tools tied to personal preferences
 
-**PAI-wide Skills** (`/Users/stefan.silver/projects/PAI/.claude/skills/`):
-- Skills that should be available across all PAI projects
+**Team-wide Skills** (`/home/stefan/teamos/teamme/.claude/skills/`):
+- Skills available across all projects in this TeamOS
 - The correct location for most new Skills in this workspace
-- Examples already here: `skill-writer`, `sec-digest`, `prime`, `create-plan`, `implement`, `pptx`, `claude-api`, `simplify`
+- Examples already here: `skill-writer`, `mcp-integration`, `pptx`, `product-coach`
 
 **Project-specific Skills** (`.claude/skills/` inside a project directory):
 - Workflows specific to a single project
@@ -61,8 +61,8 @@ After gathering requirements, present a short plan to Stefan covering:
 ### Step 4: Create Skill structure
 
 ```bash
-# PAI-wide (most common)
-mkdir -p /Users/stefan.silver/projects/PAI/.claude/skills/skill-name
+# Team-wide (most common)
+mkdir -p /home/stefan/teamos/teamme/.claude/skills/skill-name
 
 # Personal
 mkdir -p ~/.claude/skills/skill-name

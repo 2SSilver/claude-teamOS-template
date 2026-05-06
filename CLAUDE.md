@@ -2,8 +2,6 @@
 
 This file provides guidance to Claude Code when working in this repository.
 
-> **First time here?** Read `kickoff.md` before anything else.
-
 ---
 
 ## Core Principles
@@ -22,9 +20,7 @@ Claude uses this table to know who to loop in or delegate tasks to.
 
 | Name | Role | Contact (Slack / Teams) |
 |------|------|------------------------|
-| <!-- TODO: Name --> | <!-- TODO: Role --> | <!-- TODO: @handle --> |
-| <!-- TODO: Name --> | <!-- TODO: Role --> | <!-- TODO: @handle --> |
-| <!-- TODO: Name --> | <!-- TODO: Role --> | <!-- TODO: @handle --> |
+| Stefan | Owner / Learner | Direct |
 
 ---
 
@@ -49,7 +45,8 @@ Claude uses this table to know who to loop in or delegate tasks to.
 │   ├── project-info.md    # Engagement/project overview, scope, stakeholders
 │   ├── strategy.md        # Goals, priorities, success metrics
 │   ├── current-data.md    # Current status, live metrics, key numbers
-│   └── decisions.md       # Decision log (newest-first)
+│   ├── decisions.md       # Decision log (newest-first)
+│   └── todo.md            # Active todos — read by /prime, worked through during sessions
 ├── projects/              # Sub-projects (copy from template/example-project/ to add one)
 ├── template/
 │   └── example-project/   # Starter template for new sub-projects
@@ -77,6 +74,23 @@ Available in `.claude/commands/` and work from any project within this TeamOS.
 
 ---
 
+## Skills
+
+Available in `.claude/skills/` and active across all projects within this TeamOS. Skills auto-trigger by context — no invocation needed. See `.claude/skills/README.md` for the full list.
+
+| Skill | Triggers on | Purpose |
+|-------|------------|---------|
+| `product-coach` | Product strategy, OKRs, discovery, delivery, roadmaps, prioritisation, team dynamics | Direct, opinionated product coach drawing on Torres, Cagan, Herbig, Murphy, Pereira, Huryn |
+| `pptx` | "deck", "slides", "presentation", any `.pptx` filename | Create, read, edit, or combine presentations using pptxgenjs or direct editing |
+| `skill-writer` | "create a skill", "write a SKILL.md", "new skill" | Guide for creating well-structured skills for this workspace |
+| `writing-plans` | Writing a multi-step implementation plan for coding work | Detailed TDD-oriented planning with file maps and step granularity |
+| `executing-plans` | Executing an approved implementation plan | Task-by-task execution with verification checkpoints |
+| `test-driven-development` | Implementing any feature or bugfix | Red-green-refactor cycle before writing implementation code |
+| `systematic-debugging` | Any bug, test failure, or unexpected behaviour | Root-cause tracing before proposing fixes |
+| `brainstorming` | Before any creative or feature work | Explores intent, requirements, and design before implementation |
+
+---
+
 ## Brain
 
 The `brain/` directory is the team's durable knowledge layer, shared across all projects. Before designing a new approach for a non-trivial problem, check `brain/wiki/` for relevant patterns — use `/brain-wiki <topic>` explicitly. After significant work, Claude will offer to run `/brain-extract` or `/brain-summarize` to capture what was learned.
@@ -88,6 +102,12 @@ See `brain/BRAIN.md` for promotion criteria and the full system documentation.
 ## Decision Logging
 
 @.claude/rules/decisions.md
+
+---
+
+## Artifact Upload
+
+@.claude/rules/artifact-upload.md
 
 ---
 

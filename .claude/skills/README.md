@@ -42,7 +42,43 @@ Skills are reusable Claude behaviours packaged with instructions, scripts, and r
 
 ## Current skills
 
+### Domain
+
 | Skill | Trigger |
 |-------|---------|
-| `mcp-integration` | When adding or configuring an MCP server, integrating external tools via `.mcp.json` |
-| `skill-writer` | When creating a new skill — guides through SKILL.md structure and frontmatter |
+| `product-coach` | Product strategy, OKRs, discovery, delivery, roadmaps, prioritisation, team dynamics |
+| `pptx` | Any time a `.pptx` file is involved — creating, reading, editing, combining, or extracting content |
+
+### Meta / tooling
+
+| Skill | Trigger |
+|-------|---------|
+| `skill-writer` | Creating a new skill in this workspace — guides through SKILL.md structure and frontmatter |
+| `writing-skills` | Creating or editing skills using the TDD-for-documentation methodology |
+
+### Planning & execution
+
+| Skill | Trigger |
+|-------|---------|
+| `writing-plans` | Writing a multi-step implementation plan from a spec or request |
+| `executing-plans` | Executing an approved implementation plan task-by-task |
+| `verification-before-completion` | Before marking any task or plan step complete |
+
+### Development workflow
+
+| Skill | Trigger |
+|-------|---------|
+| `brainstorming` | Before any creative work — features, components, new functionality |
+| `test-driven-development` | When implementing any feature or bugfix, before writing implementation code |
+| `systematic-debugging` | When encountering any bug, test failure, or unexpected behaviour |
+| `subagent-driven-development` | When executing plans with independent tasks using subagents |
+| `dispatching-parallel-agents` | When 2+ independent tasks can be worked on in parallel |
+| `using-git-worktrees` | When starting feature work that needs isolation from the current workspace |
+
+### Code review & branching
+
+| Skill | Trigger |
+|-------|---------|
+| `requesting-code-review` | After completing tasks or features, before merging |
+| `receiving-code-review` | When receiving code review feedback before implementing suggestions |
+| `finishing-a-development-branch` | When implementation is complete and ready to merge or PR |
