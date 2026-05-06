@@ -1,46 +1,36 @@
 # Project Info
 
-> **TODO:** Replace all placeholder content below with real information about the engagement or project.
-
 ---
 
 ## Project / Engagement Name
 
-<!-- TODO: Enter the project or engagement name -->
-[Project Name]
+Remote Claude Code Setup
 
 ## Overview
 
-<!-- TODO: 2-3 sentences describing what this project is and why it exists -->
-[Brief description of the project — what it is, what problem it solves, why it matters]
+Enable Stefan to build and use Claude Code remotely — full development capability from any location, not tied to a local machine. This is the foundation project for teamme: getting the environment right so everything else can be built on top of it.
 
 ## Client / Organisation
 
-<!-- TODO: Who is this for? Internal team or external client? -->
-[Organisation name and relevant context]
+teamme (Stefan, solo)
 
 ## Scope
 
-<!-- TODO: What is in scope and what is explicitly out of scope -->
-
 **In scope:**
-- [Area 1]
-- [Area 2]
+- Remote access to Claude Code environment
+- Tooling, configuration, and workflows that support remote development
+- Building and testing solutions from a remote setup
 
 **Out of scope:**
-- [Area 1]
-- [Area 2]
+- Team-scale infrastructure (solo use only, for now)
 
 ## Timeline
 
-<!-- TODO: Key milestones and deadlines -->
-
 | Milestone | Date | Status |
 |-----------|------|--------|
-| [Milestone] | [YYYY-MM-DD] | [Not started / In progress / Done] |
+| Initial remote setup working | TBD | In progress |
 
 ## Key Constraints
 
-<!-- TODO: Budget, technical, political, or other constraints worth noting -->
-- [Constraint 1]
-- [Constraint 2]
+- Solo operator — Stefan is doing all the work
+- Must be practical and usable day-to-day, not just theoretically functional

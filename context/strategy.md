@@ -1,47 +1,39 @@
 # Strategy
 
-> **TODO:** Replace all placeholder content below with the team's current strategic priorities.
-
 ---
 
 ## Current Phase
 
-<!-- TODO: What phase is the team in? e.g. Discovery, Design, Build, Scale, Stabilise -->
-[Phase name and brief description]
+**Foundation** — Setting up the environment, tools, and habits to work effectively with Claude Code before scaling to broader use.
 
 ## Goals
 
-<!-- TODO: What must the team achieve this quarter or phase? Be specific. -->
-
-1. [Goal 1 — specific, measurable]
-2. [Goal 2 — specific, measurable]
-3. [Goal 3 — specific, measurable]
+1. Get a stable, reliable remote Claude Code environment that Stefan can use day-to-day
+2. Build, ship, and maintain real applications using Claude Code — not just experiments, but things that work and get maintained
+3. Develop a playbook for scaling AI-assisted development from solo use to team and eventually organisational adoption
 
 ## Priorities
 
-<!-- TODO: What is the team focused on right now? Ordered by importance. -->
-
-1. [Priority 1]
-2. [Priority 2]
-3. [Priority 3]
+1. Remote Claude Code setup — working and stable
+2. Build first real application end-to-end using Claude Code
+3. Document patterns and lessons that will form the team/org scaling playbook
 
 ## Success Metrics
 
-<!-- TODO: How will the team know it has succeeded? -->
-
 | Metric | Target | Current |
 |--------|--------|---------|
-| [Metric] | [Target value] | [Current value] |
+| Remote Claude Code sessions per week | 5+ | 0 (just starting) |
+| Applications built and maintained | 3+ | 0 |
+| Scaling playbook coverage | Team-ready | Not started |
 
 ## Known Risks
 
-<!-- TODO: What could derail the team? -->
-
 | Risk | Likelihood | Impact | Mitigation |
 |------|-----------|--------|------------|
-| [Risk] | [H/M/L] | [H/M/L] | [Mitigation approach] |
+| Remote setup friction kills momentum | M | H | Keep setup simple; solve blockers fast |
+| Learning without shipping | M | H | Bias toward building real things, not just reading |
+| Playbook stays theoretical | L | M | Validate every pattern with real usage before writing it up |
 
 ## Strategic Context
 
-<!-- TODO: Why does this strategy exist? What broader context shapes it? -->
-[One paragraph on the strategic context — organisational direction, market forces, mandates, etc.]
+AI-assisted development is changing how software gets built. teamme exists to get ahead of this shift — not just adopting tools, but deeply understanding how to use them well, and eventually helping teams and organisations make the same leap. The remote Claude Code focus is the immediate foundation: you can't scale what you haven't mastered yourself.

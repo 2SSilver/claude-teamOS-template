@@ -36,3 +36,4 @@ Any assumptions, risks, or open questions.
 
 5. Present the plan for review before marking it as Approved
 6. Update CLAUDE.md if the plan introduces new structure, commands, or workflows
+7. Update `context/todo.md`: add the plan title as a new item under **In progress**. Use the format `- [ ] <Plan title> \`high\`` (adjust priority tag if the plan is clearly medium or low). If an equivalent item already exists in To do or In progress, move it to In progress instead of adding a duplicate.

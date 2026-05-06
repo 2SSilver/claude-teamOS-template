@@ -1,41 +1,30 @@
 # Team Info
 
-> **TODO:** Replace all placeholder content below with real information about the team.
-
 ---
 
 ## Team Name
 
-<!-- TODO: Enter the team name -->
-[Team Name]
+teamme
 
 ## Mission
 
-<!-- TODO: One sentence describing what this team exists to do -->
-[One sentence: what the team exists to accomplish]
+To master how to work with AI through learning, exploring and solving problems, and building solutions that help in day-to-day work.
 
 ## Team Members
 
-<!-- TODO: List team members, their roles, and any relevant expertise -->
-
 | Name | Role | Expertise |
 |------|------|-----------|
-| [Name] | [Role] | [Key expertise or focus area] |
-| [Name] | [Role] | [Key expertise or focus area] |
+| Stefan | Owner / Learner | AI exploration, solution building |
 
 ## Ways of Working
 
-<!-- TODO: Describe how the team operates — meeting cadence, communication channels, decision-making style -->
-
-- **Meetings:** [e.g. weekly sync on Mondays, async by default]
-- **Communication:** [e.g. Slack #team-channel, Teams, email]
-- **Decisions:** [e.g. driver makes final call after team input, consensus-based]
-- **Tools:** [e.g. Linear for tasks, GitHub for code, Notion for docs]
+- **Meetings:** Solo — async by default
+- **Communication:** Direct with Claude
+- **Decisions:** Stefan makes the call with Claude input
+- **Tools:** Claude Code, GitHub
 
 ## Stakeholders
 
-<!-- TODO: Key stakeholders outside the team -->
-
 | Name | Role | Relationship |
 |------|------|-------------|
-| [Name] | [Role] | [e.g. sponsor, customer, dependency] |
+| Stefan | Owner | Driver of all work |

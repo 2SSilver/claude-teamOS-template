@@ -48,4 +48,6 @@ A project starts minimal. Build it up as the work develops:
 
 ## Current projects
 
-<!-- Add entries here as projects are created. -->
+| Project | Description |
+|---------|-------------|
+| [consulting](consulting/) | Consulting work — context and deliverables TBD |

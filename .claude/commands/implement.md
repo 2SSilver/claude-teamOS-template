@@ -16,3 +16,4 @@ Execute the implementation plan at: $ARGUMENTS
    - Summarize what was accomplished
 6. Update CLAUDE.md if any structural changes were made
 7. Ask if there are questions about the changes
+8. Update `context/todo.md`: find the item matching this plan and move it to **Done** — change `- [ ]` to `- [x]` and move the line under the `## Done` section.

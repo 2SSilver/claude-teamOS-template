@@ -22,6 +22,10 @@ build/
 .env.local
 *.pem
 *.key
+.mcp.json
+.claude/claudeclaw/
+.claude/settings.local.json
+.claude/projects/
 
 # Personal Claude overrides (gitignored — use for user-specific preferences)
 CLAUDE.local.md
@@ -38,3 +42,4 @@ npm-debug.log*
 
 # OS
 Thumbs.db
+projects/waowle-ui/
