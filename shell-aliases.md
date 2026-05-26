@@ -8,7 +8,7 @@ Suggested shell aliases for working with this TeamOS. Add these to your `~/.zshr
 # cs — open this TeamOS with /prime (safe mode, permission prompts)
 alias cs='cd /path/to/your-teamOS && claude "/prime"'
 
-# cr — open this TeamOS with /prime (reckless mode, no permission prompts)
+# cr — open this TeamOS with /prime (run mode, no permission prompts)
 alias cr='cd /path/to/your-teamOS && claude --dangerously-skip-permissions "/prime"'
 ```
 
@@ -17,9 +17,9 @@ alias cr='cd /path/to/your-teamOS && claude --dangerously-skip-permissions "/pri
 ## Conventions
 
 - `cs` = **C**laude **S**afe (with permission prompts)
-- `cr` = **C**laude **R**eckless (autonomous mode, no prompts)
+- `cr` = **C**laude **R**un (autonomous mode, no prompts)
 
-Use reckless mode (`cr`) when running well-understood, repetitive tasks. Use safe mode (`cs`) for exploratory or structural work.
+Use run mode (`cr`) when running well-understood, repetitive tasks. Use safe mode (`cs`) for exploratory or structural work.
 
 ## Per-Project Aliases
 
