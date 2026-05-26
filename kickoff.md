@@ -103,7 +103,7 @@ If the team is working on a specific project or engagement, set it up now.
 Shell aliases make it fast to launch a TeamOS session.
 
 - [ ] Open `shell-aliases.md` and follow the instructions to add aliases to your shell config
-- [ ] Recommended: a `to` alias (TeamOS open) that launches Claude with `/prime`
+- [ ] Recommended: a `cs` alias (Claude Safe) that launches Claude with `/prime`, plus `cr` (Claude Reckless) for autonomous mode
 - [ ] Reload your shell: `source ~/.zshrc` (or `~/.bashrc`)
 
 ---

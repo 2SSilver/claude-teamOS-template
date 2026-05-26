@@ -5,21 +5,21 @@ Suggested shell aliases for working with this TeamOS. Add these to your `~/.zshr
 ## TeamOS Aliases
 
 ```bash
-# to — open this TeamOS with /prime (safe mode, permission prompts)
-alias to='cd /path/to/your-teamOS && claude "/prime"'
+# cs — open this TeamOS with /prime (safe mode, permission prompts)
+alias cs='cd /path/to/your-teamOS && claude "/prime"'
 
-# tor — open this TeamOS with /prime (autonomous mode, no permission prompts)
-alias tor='cd /path/to/your-teamOS && claude --dangerously-skip-permissions "/prime"'
+# cr — open this TeamOS with /prime (reckless mode, no permission prompts)
+alias cr='cd /path/to/your-teamOS && claude --dangerously-skip-permissions "/prime"'
 ```
 
 > **TODO:** Replace `/path/to/your-teamOS` with the actual path to this repo.
 
 ## Conventions
 
-- `to` = **T**eam**O**S open
-- `tor` = **T**eam**O**S open, **r**eckless (autonomous mode)
+- `cs` = **C**laude **S**afe (with permission prompts)
+- `cr` = **C**laude **R**eckless (autonomous mode, no prompts)
 
-Use autonomous mode (`tor`) when running well-understood, repetitive tasks. Use safe mode (`to`) for exploratory or structural work.
+Use reckless mode (`cr`) when running well-understood, repetitive tasks. Use safe mode (`cs`) for exploratory or structural work.
 
 ## Per-Project Aliases
 
