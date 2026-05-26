@@ -31,7 +31,7 @@ projects/<project-name>/
 │   └── decisions.md       # Project-level decision log
 ├── .claude/
 │   └── skills/            # Project-specific skills
-├── plans/                 # Project plans
+├── docs/superpowers/plans/   # Project plans (superpowers default location)
 ├── outputs/               # Project deliverables
 ├── reference/             # Project-specific templates and references
 ├── scripts/               # Project-specific automation

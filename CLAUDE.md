@@ -16,6 +16,19 @@ This file provides guidance to Claude Code when working in this repository.
 
 ---
 
+## Prerequisite
+
+This TeamOS depends on the `superpowers` plugin. `/create-plan` and `/implement` are thin wrappers that hand off to its `writing-plans` and `executing-plans` skills. Each team member running Claude Code locally must install it once at user scope (see `kickoff.md` Step 1):
+
+```
+/plugin marketplace add claude-plugins-official
+/plugin install superpowers@claude-plugins-official
+```
+
+Run `/list-skills` to confirm the plugin's skills are discoverable.
+
+---
+
 ## Team Structure
 
 Claude uses this table to know who to loop in or delegate tasks to.
@@ -53,7 +66,9 @@ Claude uses this table to know who to loop in or delegate tasks to.
 ├── projects/              # Sub-projects (copy from template/example-project/ to add one)
 ├── template/
 │   └── example-project/   # Starter template for new sub-projects
-├── plans/                 # Implementation plans (root-level, cross-project)
+├── docs/
+│   └── superpowers/
+│       └── plans/         # Implementation plans (root-level, cross-project)
 ├── outputs/               # Team-level deliverables
 ├── reference/             # Shared templates, examples, reference material
 └── scripts/               # Shared automation scripts
@@ -68,8 +83,9 @@ Available in `.claude/commands/` and work from any project within this TeamOS.
 | Command | Purpose |
 |---------|---------|
 | `/prime` | Initialize a session — load context, summarize mission and priorities, confirm readiness |
-| `/create-plan [request]` | Create a detailed implementation plan before doing work |
-| `/implement [plan-path]` | Execute an approved plan step by step |
+| `/list-skills` | Print a live catalogue of every available skill (workspace, user-global, plugins) |
+| `/create-plan [request]` | Thin wrapper that invokes the `superpowers:writing-plans` skill |
+| `/implement [plan-path]` | Thin wrapper that invokes the `superpowers:executing-plans` skill |
 | `/brain-wiki [topic]` | Consult the wiki before starting a new approach or design decision |
 | `/brain-extract` | Extract reusable insights from current session work into a raw note |
 | `/brain-summarize [scope]` | Summarize reusable lessons from a session or project phase |
@@ -94,5 +110,3 @@ See `brain/BRAIN.md` for promotion criteria and the full system documentation.
 ## Memory
 
 Claude's auto-memory system (`~/.claude/projects/.../memory/`) stores session context between conversations automatically — no setup required.
-
-> **Optional (personal use only):** [claude-mem](https://github.com/thedotmack/claude-mem) adds a semantic observation layer (SQLite + Chroma, searchable via MCP). AGPL-3.0 licensed — review carefully before enabling in a team or enterprise context.

@@ -1,21 +1,22 @@
 ---
-name: skill-writer
-description: Guide users through creating Agent Skills for Claude Code. Use when the user wants to create, write, author, or design a new Skill, or needs help with SKILL.md files, frontmatter, or skill structure.
+name: skill-scaffolder
+description: Scaffold a new Agent Skill — choose location and pattern, write valid frontmatter, structure the body, and validate the result. Use when a team member wants to bootstrap a SKILL.md file or fix structural issues in an existing one. For TDD-driven skill authoring with subagent pressure-tests, see superpowers:writing-skills instead.
 allowed-tools: Read, Write, Edit, Glob, Bash
 ---
 
-# Skill Writer
+# Skill Scaffolder
 
-This Skill helps create well-structured Agent Skills for Claude Code that follow best practices and validation requirements.
+This Skill helps a team member scaffold well-structured Agent Skills for Claude Code that follow best practices and validation requirements.
 
 ## When to use this Skill
 
 Use this Skill when:
-- Creating a new Agent Skill
-- Writing or updating SKILL.md files
-- Designing skill structure and frontmatter
+- Bootstrapping a new Agent Skill from scratch
+- Writing or repairing SKILL.md frontmatter
+- Deciding between single-file and multi-file skill patterns
 - Troubleshooting skill discovery issues
-- Converting existing prompts or workflows into Skills
+
+For TDD-driven skill authoring with subagent pressure-tests, defer to the `superpowers:writing-skills` skill instead — it covers a complementary methodology.
 
 ## Instructions
 
@@ -24,9 +25,9 @@ Use this Skill when:
 Before writing anything, ask clarifying questions one at a time and wait for a complete answer before asking the next:
 
 1. What specific capability should this Skill provide?
-2. When should Claude use this Skill? What would Stefan say to trigger it?
+2. When should Claude use this Skill? What would a team member say to trigger it?
 3. What tools or resources does it need?
-4. Is this for personal use (`~/.claude/skills/`) or PAI-wide (`.claude/skills/` in the PAI project)?
+4. Is this for personal use (`~/.claude/skills/`) or team-wide (`$PWD/.claude/skills/`)?
 
 Keep it focused: **one Skill = one capability**
 - Good: "PDF form filling", "security digest generation"
@@ -34,7 +35,7 @@ Keep it focused: **one Skill = one capability**
 
 ### Step 2: Confirm the plan before writing any files
 
-After gathering requirements, present a short plan to Stefan covering:
+After gathering requirements, present a short plan to the team member covering:
 - Proposed skill name
 - Location
 - Proposed file structure (single file or multi-file)
@@ -45,24 +46,23 @@ After gathering requirements, present a short plan to Stefan covering:
 ### Step 3: Choose Skill location
 
 **Personal Skills** (`~/.claude/skills/`):
-- Individual workflows not shared across PAI projects
+- Individual workflows not shared with the team
 - Experimental or work-in-progress Skills
 - Tools tied to personal preferences
 
-**PAI-wide Skills** (`/Users/stefan.silver/projects/PAI/.claude/skills/`):
-- Skills that should be available across all PAI projects
-- The correct location for most new Skills in this workspace
-- Examples already here: `skill-writer`, `sec-digest`, `prime`, `create-plan`, `implement`, `pptx`, `claude-api`, `simplify`
+**Team-wide Skills** (`$PWD/.claude/skills/`):
+- Skills that should be available to every project in this TeamOS
+- The correct location for most new Skills authored here
 
-**Project-specific Skills** (`.claude/skills/` inside a project directory):
+**Project-specific Skills** (`projects/<name>/.claude/skills/`):
 - Workflows specific to a single project
-- Committed to git if that project is a repo
+- Committed to the team repo
 
 ### Step 4: Create Skill structure
 
 ```bash
-# PAI-wide (most common)
-mkdir -p /Users/stefan.silver/projects/PAI/.claude/skills/skill-name
+# Team-wide (most common)
+mkdir -p "$PWD/.claude/skills/skill-name"
 
 # Personal
 mkdir -p ~/.claude/skills/skill-name
@@ -110,7 +110,7 @@ allowed-tools: Read, Write, Edit, Glob, Bash
 - **description**:
   - Max 1024 characters
   - Include BOTH what it does AND when to use it
-  - Use specific trigger words Stefan would say
+  - Use specific trigger words the team would say
   - Mention file types, operations, and context
 
 - **allowed-tools**:
@@ -124,16 +124,6 @@ allowed-tools: Read, Write, Edit, Glob, Bash
 ### Step 6: Write effective descriptions
 
 **Formula**: `[What it does] + [When to use it] + [Key triggers]`
-
-Good examples from existing PAI skills:
-
-```yaml
-# sec-digest: specific domain, specific output, clear trigger
-description: Generate a cyber security news digest covering the past month.
-
-# pptx: explicit file type, multiple operations, clear trigger phrases
-description: Use this skill any time a .pptx file is involved — creating, reading, editing, combining, or extracting content from presentations.
-```
 
 Tips:
 - Include specific file extensions (.pdf, .xlsx, .json)
@@ -179,7 +169,7 @@ For **multi-file workflow skills**, use the on-demand reading pattern — not `@
 
 **On-demand pattern:** SKILL.md contains explicit routing instructions. Claude reads the sub-file only when that mode is triggered.
 
-**Routing instruction template** (add to "When the User Asks" section in SKILL.md):
+**Routing instruction template** (add to "When the Team Asks" section in SKILL.md):
 ```markdown
 - "Guide me through [workflow]" → read `workflow-file.md` in this skill directory and follow it
 - "Review [thing]" → read `review-template.md` in this skill directory for output format
@@ -245,7 +235,7 @@ allowed-tools: Read, Grep, Glob
 ```yaml
 ---
 name: threat-researcher
-description: Research cyber threats, CVEs, and security advisories using live web data. Use when Stefan asks about specific threats, vulnerabilities, or security news.
+description: Research cyber threats, CVEs, and security advisories using live web data. Use when the team asks about specific threats, vulnerabilities, or security news.
 allowed-tools: Read, Write, mcp__perplexity__perplexity_search, mcp__perplexity__perplexity_research
 ---
 ```
@@ -255,7 +245,7 @@ allowed-tools: Read, Write, mcp__perplexity__perplexity_search, mcp__perplexity_
 ```yaml
 ---
 name: report-writer
-description: Generate structured markdown reports from raw notes or data. Use when Stefan asks to write up, summarise, or format findings into a report.
+description: Generate structured markdown reports from raw notes or data. Use when the team asks to write up, summarise, or format findings into a report.
 allowed-tools: Read, Write, Edit, Glob, Bash
 ---
 ```

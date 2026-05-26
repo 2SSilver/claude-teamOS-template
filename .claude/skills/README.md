@@ -45,4 +45,4 @@ Skills are reusable Claude behaviours packaged with instructions, scripts, and r
 | Skill | Trigger |
 |-------|---------|
 | `mcp-integration` | When adding or configuring an MCP server, integrating external tools via `.mcp.json` |
-| `skill-writer` | When creating a new skill — guides through SKILL.md structure and frontmatter |
+| `skill-scaffolder` | When scaffolding a new skill — structural authoring guide (location, frontmatter, body, validation). For TDD-driven authoring with subagent pressure-tests, use `superpowers:writing-skills` instead. |

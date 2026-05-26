@@ -24,5 +24,5 @@
 ## Output Conventions
 
 <!-- TODO: How outputs should be structured, named, and stored for this project -->
-- Plans: `plans/YYYY-MM-DD-<slug>.md`
+- Plans: `docs/superpowers/plans/YYYY-MM-DD-<slug>.md`
 - Outputs: `outputs/<type>/<filename>`

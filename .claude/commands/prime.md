@@ -9,7 +9,7 @@ Initialize this session by loading full workspace context.
    - `context/strategy.md`
    - `context/current-data.md`
    - `context/decisions.md` (if it exists — skip silently if not present)
-3. Check for any existing plans in `plans/` and outputs in `outputs/` to understand recent work
+3. Check for any existing plans in `docs/superpowers/plans/` and outputs in `outputs/` to understand recent work
 4. Summarize understanding in this format:
 
 **Team mission:** [one sentence]

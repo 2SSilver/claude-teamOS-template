@@ -1,12 +1,28 @@
 # TeamOS Kickoff Checklist
 
-Welcome to your new TeamOS. This file guides you through the initial configuration. Work through each step in order. When you are done, run `/prime` — that is your daily starting point from here on.
+Welcome to your new TeamOS. This file guides you through the initial configuration. Work through each step in order. When the team is done, run `/prime` — that is your daily starting point from here on.
 
 Mark each step complete with `[x]` as you go.
 
 ---
 
-## Step 1 — Fill in Team Context
+## Step 1 — Install the superpowers plugin (required)
+
+This TeamOS depends on the `superpowers` plugin for `/create-plan` and `/implement`. Install it once at user scope (each team member running Claude Code locally must install it).
+
+- [ ] Open Claude Code in this directory
+- [ ] Add the marketplace and install the plugin:
+  ```
+  /plugin marketplace add claude-plugins-official
+  /plugin install superpowers@claude-plugins-official
+  ```
+- [ ] Confirm install: `/list-skills` should list `superpowers:writing-plans`, `superpowers:executing-plans`, and the other superpowers skills under the **Plugin skills** section.
+
+> Source: https://github.com/anthropics/claude-plugins-official
+
+---
+
+## Step 2 — Fill in Team Context
 
 Open each file in `context/` and replace the `<!-- TODO -->` placeholders with real content.
 
@@ -19,7 +35,7 @@ Leave `context/decisions.md` as-is — Claude will populate it as decisions are 
 
 ---
 
-## Step 2 — Configure MCPs
+## Step 3 — Configure MCPs
 
 Open `.mcp.json` at the repo root. Replace any `YOUR_API_KEY` placeholders with real keys.
 
@@ -38,7 +54,7 @@ Common servers to consider:
 
 ---
 
-## Step 3 — Add Reference Material
+## Step 4 — Add Reference Material
 
 The `reference/` folder is for shared templates, examples, and documents Claude should be able to read.
 
@@ -48,29 +64,28 @@ The `reference/` folder is for shared templates, examples, and documents Claude 
 
 ---
 
-## Step 4 — Review and Adjust Commands
+## Step 5 — Review and Adjust Commands
 
 The commands in `.claude/commands/` are ready to use out of the box. Review them to understand what's available.
 
 - [ ] Read through each `.md` file in `.claude/commands/` — they are short and self-explanatory
+- [ ] Note: `/create-plan` and `/implement` are thin wrappers — they hand off to the `superpowers` plugin installed in Step 1
 - [ ] If a command needs adjustment for the team's context (e.g. different context file names), edit it now
 - [ ] If the team needs a custom command (e.g. a domain-specific digest or analysis), create one in `.claude/commands/`
 
 ---
 
-## Step 5 — Install Skills (if needed)
+## Step 6 — Install Skills (if needed)
 
 Skills are reusable Claude behaviours packaged with instructions, scripts, and references.
 
-- [ ] Check if any globally installed skills apply (e.g. `pptx` for presentation work)
-- [ ] If the team needs a domain-specific skill (e.g. a persona, a recurring analysis type), create one in `.claude/skills/`
+- [ ] Run `/list-skills` to see everything currently available — workspace, user-global, and plugin sources
+- [ ] If the team needs a domain-specific skill (e.g. a persona, a recurring analysis type), use `skill-scaffolder` to structure one in `.claude/skills/`, or use `superpowers:writing-skills` for the TDD-driven authoring methodology
 - [ ] Skills placed in `.claude/skills/` at the TeamOS root are available to all projects
-
-> Use `/create-plan` to plan a new skill, then implement it. Or use the `skill-writer` skill if available.
 
 ---
 
-## Step 6 — Create First Project (if applicable)
+## Step 7 — Create First Project (if applicable)
 
 If the team is working on a specific project or engagement, set it up now.
 
@@ -83,7 +98,7 @@ If the team is working on a specific project or engagement, set it up now.
 
 ---
 
-## Step 7 — Set Up Shell Aliases (optional but recommended)
+## Step 8 — Set Up Shell Aliases (optional but recommended)
 
 Shell aliases make it fast to launch a TeamOS session.
 
@@ -93,27 +108,25 @@ Shell aliases make it fast to launch a TeamOS session.
 
 ---
 
-## Step 8 — Add Personal Overrides (optional)
+## Step 9 — Add Personal Overrides (optional)
 
-If you have personal preferences that should not be committed to the repo (e.g. your own tone preferences, personal shortcuts, local-only instructions), create a `CLAUDE.local.md` at the repo root. Claude Code loads it automatically alongside `CLAUDE.md`, and it is gitignored by default.
+If a team member has personal preferences that should not be committed to the repo (e.g. own tone preferences, personal shortcuts, local-only instructions), create a `CLAUDE.local.md` at the repo root. Claude Code loads it automatically alongside `CLAUDE.md`, and it is gitignored by default.
 
 - [ ] Create `CLAUDE.local.md` at the repo root (optional — only if needed)
 - [ ] Add any personal, non-team instructions there
 
 ---
 
-## Step 9 — Configure Auto-Memory (optional)
+## Step 10 — Configure Auto-Memory (optional)
 
 Claude's auto-memory system stores session context between conversations.
 
 - [ ] The memory directory is created automatically at `~/.claude/projects/.../memory/` on first use — no setup needed
 - [ ] If the team wants to customize what Claude remembers, review the memory files after a few sessions
 
-> For personal use: [claude-mem](https://github.com/thedotmack/claude-mem) adds a semantic observation layer. It is AGPL-3.0 licensed and routes data through the Claude API. Review carefully before enabling in a team or enterprise context.
-
 ---
 
-## Step 10 — Run `/prime` for the First Time
+## Step 11 — Run `/prime` for the First Time
 
 - [ ] Open Claude Code in this directory
 - [ ] Run `/prime`
@@ -122,11 +135,11 @@ Claude's auto-memory system stores session context between conversations.
 
 ---
 
-## Step 11 — Log the First Decision
+## Step 12 — Log the First Decision
 
 Every significant choice gets logged in `context/decisions.md`. Log one now to confirm the system is working.
 
-- [ ] Ask Claude to log your first decision — e.g. "Log a decision: we chose X approach for Y reason"
+- [ ] Ask Claude to log the first decision — e.g. "Log a decision: we chose X approach for Y reason"
 - [ ] Verify the entry appears in `context/decisions.md` in the correct format
 
 ---
@@ -136,8 +149,8 @@ Every significant choice gets logged in `context/decisions.md`. Log one now to c
 The TeamOS is configured. From here:
 
 - **Start every session** with `/prime`
-- **Plan before building** with `/create-plan [request]`
-- **Execute plans** with `/implement [plan-path]`
+- **Plan before building** with `/create-plan [request]` (uses `superpowers:writing-plans`)
+- **Execute plans** with `/implement [plan-path]` (uses `superpowers:executing-plans`)
 - **Capture knowledge** with `/brain-extract` or `/brain-summarize` at the end of significant work
 - **Update this file** if the kickoff process needs improving for the next team
 
